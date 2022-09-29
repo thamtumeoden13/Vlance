@@ -9,8 +9,8 @@ import {
   Layout,
   themes,
   DefaultVariables,
-} from "@/Theme";
-import { logInfo } from "@/Utils";
+} from "@/themes";
+import { logInfo } from "@/utils";
 
 export default function () {
   logInfo("useTheme get called");

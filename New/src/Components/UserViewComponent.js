@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { View, Image } from "react-native";
-import { useTheme } from "@/Hooks";
+import { useTheme } from "@/hooks";
 
 const UserViewComponent = ({ height, width, mode, changeUserName }) => {
   const { Layout, Images } = useTheme();

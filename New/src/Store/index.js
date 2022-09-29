@@ -12,7 +12,7 @@ import {
   REGISTER,
 } from "redux-persist";
 
-import { api } from "@/Services/api";
+import { api } from "@/services/api";
 import theme from "./Theme";
 
 const reducers = combineReducers({

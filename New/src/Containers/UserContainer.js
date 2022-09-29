@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import { Text } from "react-native";
 
 // import { useTheme } from "@/Hooks";
-import { logInfo } from "@/Utils";
+import { logInfo } from "@/utils";
 
 // import { UserViewComponent } from "@/Components";
-import { useUser } from "@/Models";
-import { useLazyFetchOneQuery } from "@/Services/modules/users";
+import { useUser } from "@/models";
+import { useLazyFetchOneQuery } from "@/services/modules/users";
 
-import { fetchOne } from "@/Models";
+import { fetchOne } from "@/models";
 
 const UserContainer = () => {
   // const [fetchOne, { data, isSuccess, isLoading, isFetching, error }] =

@@ -9,11 +9,11 @@ import {
 } from "react-native";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { Brand } from "@/Components";
-import { useTheme } from "@/Hooks";
-import { useLazyFetchOneQuery } from "@/Services/modules/users";
-import { changeTheme } from "@/Store/Theme";
-import { logInfo } from "@/Utils";
+import { Brand } from "@/components";
+import { useTheme } from "@/hooks";
+import { useLazyFetchOneQuery } from "@/services/modules/users";
+import { changeTheme } from "@/store/Theme";
+import { logInfo } from "@/utils";
 
 const ExampleContainer = () => {
   const { t } = useTranslation();

@@ -1,23 +1,38 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ExampleContainer, UserContainer } from "@/Containers";
-import { StartupContainer } from "@/Containers";
+import { ExampleContainer, UserContainer, HomeContainer } from "@/containers";
+import { StartupContainer } from "@/containers";
 
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
+
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import CustomDrawerContent from "./CustomDrawerContent";
+
+const Drawer = createDrawerNavigator();
 
 // @refresh reset
 const MainNavigator = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name="Home"
-        component={UserContainer}
+    <Drawer.Navigator
+      screenOptions={{
+        headerShown: false,
+        drawerPosition: 'right',
+        drawerStyle: {
+          borderTopRightRadius: 30,
+          borderBottomRightRadius: 30,
+          overlayColor: 'transparent',
+        },
+      }}
+      drawerContent={props => <CustomDrawerContent {...props} />}>
+      <Drawer.Screen
+        // name={i18n.t('Home')}
+        name={'fieldApplication'}
+        component={HomeContainer}
         options={{
-          tabBarIconStyle: { display: "none" },
-          tabBarLabelPosition: "beside-icon",
+          headerShown: false,
         }}
       />
-    </Tab.Navigator>
+    </Drawer.Navigator>
   );
 };
 

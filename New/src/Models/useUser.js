@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { useLazyFetchOneQuery } from "@/Services/modules/users";
-import { logInfo } from "@/Utils";
+import { useLazyFetchOneQuery } from "@/services/modules/users";
+import { logInfo } from "@/utils";
 
 export const useUser = (fetchUser) => {
   logInfo("From useUser outside useEffect");
