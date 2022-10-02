@@ -7,11 +7,11 @@ import { StartupContainer } from "@/containers";
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import CustomDrawerContent from "./CustomDrawerContent";
+import MainStackNavigator from "./MainStackNavigator";
 
 const Drawer = createDrawerNavigator();
 
-// @refresh reset
-const MainNavigator = () => {
+const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
       screenOptions={{
@@ -26,14 +26,14 @@ const MainNavigator = () => {
       drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen
         // name={i18n.t('Home')}
-        name={'fieldApplication'}
-        component={HomeContainer}
+        name={'drawer'}
+        component={MainStackNavigator}
         options={{
-          headerShown: false,
+          // headerShown: true,
         }}
       />
     </Drawer.Navigator>
   );
 };
 
-export default MainNavigator;
+export default DrawerNavigator;

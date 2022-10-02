@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import {
     View,
     ActivityIndicator,
@@ -15,66 +15,65 @@ import { useLazyFetchOneQuery } from "@/services/modules/users";
 import { changeTheme } from "@/store/Theme";
 import { logInfo } from "@/utils";
 import { navigate } from "@/navigators/utils";
-
-const surveyPerformainingData = {
-    requestId: '8',
-    measurePoint: '23.345',
-    customerName: 'dummy name',
-    address: 'abc street xyz',
-    surveyDetails: 'abc  dummy dummy xyz',
-    street: ' 23 street ',
-    phone: '6834234',
-    stationId: '32',
-};
+import { useNavigation } from "@react-navigation/native";
+import Header from "@/components/Common/Header";
+import { MAIN_SCREENS } from "@/constants";
+import CustomButton from "@/components/Common/CustomButton";
 
 const HomeContainer = (props) => {
 
     const { t } = useTranslation();
     const { Common, Fonts, Gutters, Layout } = useTheme();
     const dispatch = useDispatch();
+    const navigation = useNavigation()
+
+    useLayoutEffect(() => {
+        navigation.setOptions({
+            header: () => <Header
+                title='Home Page'
+                isShowBackIcon
+                isShowLeftIcon
+                isShowRightIcon
+                onGoBack={() => { if (navigation.canGoBack) navigation.goBack() }}
+                onPressRightIcon={() => navigation.openDrawer()}
+            // onPressLeftIcon = {()=> navigation.navigate('')}
+            />,
+        })
+    }, [navigation])
 
     return (
-
         <ScrollView
             style={Layout.fill}
             contentContainerStyle={[
                 Layout.fill,
                 Layout.colCenter,
-                Layout.justifyContentEnd,
                 Gutters.smallHPadding,
             ]}
         >
             <View style={[[Layout.rowCenter, Gutters.smallHPadding]]}>
-                <TouchableOpacity
-                    style={[Common.button.rounded, Layout.fill, Gutters.regularBMargin]}
-                // onPress={() => navigate(MAIN_SCREENS.ADDITIONAL_CONTRACT)}
-                >
-                    <Text style={[Fonts.textRegular, Fonts.textCenter]}>{t('additional contract')}</Text>
-                </TouchableOpacity>
+                <CustomButton
+                    title="additional contract"
+                    onPress={() => navigate(MAIN_SCREENS.SURVEY_PERFORMING)}
+                />
             </View>
             <View style={[[Layout.rowCenter, Gutters.smallHPadding]]}>
-                <TouchableOpacity
-                    style={[Common.button.rounded, Layout.fill, Gutters.regularBMargin]}
-                // onPress={() => navigate(MAIN_SCREENS.ADDITIONAL_CONTRACT)}
-                >
-                    <Text style={[Fonts.textRegular, Fonts.textCenter]}>{t('Survey  Performing')}</Text>
-                </TouchableOpacity>
+                <CustomButton
+                    title="Survey Performing"
+                    onPress={() => navigation.openDrawer()}
+                />
+
             </View>
             <View style={[[Layout.rowCenter, Gutters.smallHPadding]]}>
-                <TouchableOpacity
-                    style={[Common.button.rounded, Layout.fill, Gutters.regularBMargin]}
-                // onPress={() => navigate(MAIN_SCREENS.ADDITIONAL_CONTRACT)}
-                >
-                    <Text style={[Fonts.textRegular, Fonts.textCenter]}>{t('Special Information')}</Text>
-                </TouchableOpacity>
+                <CustomButton
+                    title="Special Information"
+                    onPress={() => navigation.openDrawer()}
+                />
             </View>
             <View style={[[Layout.rowCenter, Gutters.smallHPadding]]}>
-                <TouchableOpacity
-                    style={[Common.button.rounded, Layout.fill, Gutters.regularBMargin]}
-                // onPress={() => navigate(MAIN_SCREENS.ADDITIONAL_CONTRACT)}
-                >
-                    <Text style={[Fonts.textRegular, Fonts.textCenter]}>{t('Contract Appendix')}</Text>
-                </TouchableOpacity>
+                <CustomButton
+                    title="Contract Appendix"
+                    onPress={() => navigation.openDrawer()}
+                />
             </View>
         </ScrollView>
     )

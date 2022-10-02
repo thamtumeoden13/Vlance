@@ -91,6 +91,9 @@ export default function () {
     fill: {
       flex: 1,
     },
+    radius: {
+      borderRadius: 10,
+    },
     fullSize: {
       height: "100%",
       width: "100%",

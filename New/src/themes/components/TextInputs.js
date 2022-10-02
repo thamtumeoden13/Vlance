@@ -4,12 +4,18 @@ export default function ({ Colors, Gutters, Layout }) {
   const base = {
     ...Layout.center,
     ...Gutters.largeHPadding,
-    height: 48,
-    backgroundColor: Colors.primary,
+    borderWidth: 1,
+    borderColor: Colors.text,
+    backgroundColor: Colors.white,
+    color: Colors.white,
+    minHeight: 50,
+    textAlign: 'center',
+    marginTop: 10,
+    marginBottom: 10,
   };
   const rounded = {
     ...base,
-    borderRadius: 20,
+    borderRadius: 10,
   };
   return StyleSheet.create({
     base,

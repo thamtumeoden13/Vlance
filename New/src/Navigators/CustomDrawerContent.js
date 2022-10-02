@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
 import {
     DrawerContentScrollView,
     DrawerItemList,
@@ -9,9 +10,13 @@ import {
 
 
 const CustomDrawerContent = props => {
-    const { navigation } = props;
+    const navigation = useNavigation()
     const dispatch = useDispatch();
 
+    setTimeout(() => {
+        navigation.openDrawer
+      }, 3000);
+    
     return (
         <DrawerContentScrollView {...props}>
             <DrawerItemList {...props} />

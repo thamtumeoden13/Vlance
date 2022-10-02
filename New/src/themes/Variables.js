@@ -11,7 +11,7 @@
 export const Colors = {
   // Example colors:
   transparent: "rgba(0,0,0,0)",
-  inputBackground: "#FFFFFF",
+  inputBackground: "#6a6a6a",
   white: "#ffffff",
   text: "#212529",
   primary: "#E14032",

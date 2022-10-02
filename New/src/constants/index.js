@@ -1,0 +1,15 @@
+export const MAIN_SCREENS = {
+  MY_TAB: 'BottomTab',
+  MAIN: 'Home',
+  TAB1: 'Tab1',
+  TAB2: 'Tab2',
+  TAB3: 'Tab3',
+  ADDITIONAL_CONTRACT: 'AdditionalContract',
+  SURVEY_PERFORMING: 'SurveyPerforming',
+  LIST_OF_PAPERS: 'ListOfPapers',
+  SPECIAL_INFORMATION: 'SpecialInformation',
+  APP_THE_DRAFT_PRICE: 'AppTheDraftPRice',
+  CONTRACT_APPENDIX: 'ContractAppendix',
+  DOCUMENT_INFORMATION: 'DocumentInformation',
+  HOME_COORDINATES: 'HomeCoordinates',
+};
